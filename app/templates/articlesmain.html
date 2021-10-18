@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+{%block content%}
+<!-- Articles First Row Section Starts Here -->
+{%for item in articlesList.items%}
+<div class="row extRow" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="col-sm-4"></div>
+    <!-- First Column In Articles Starts Here -->
+    <div class="col-sm-4">        
+      <div class="card extCard">
+        <div class="row">
+          <div class="class col-md-3">
+            <img src="{{url_for('static',filename='upimages/'+item.article_img_name)}}" class="img-fluid rounded extImgLeft" width="180" height="210" alt="...">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title extCardTitle">{{item.title}}</h5>
+              <p class="card-text extCardText">{{item.article_cont|safe|truncate(100)}}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>              
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+{%endfor%}
+<p style="text-align: center; padding-top: 30px;">
+<a class="btn btn-outline-info mb-4 cust-btn-info" href="{{url_for('DisplayArticles',pageNum=1)}}">&laquo;</a>              
+{%for pageNum in articlesList.iter_pages()%}                                            
+    {%if articlesList.has_next%}
+        <a class="btn btn-outline-info mb-4 cust-btn-info" href="{{url_for('DisplayArticles',pageNum=pageNum)}}">{{pageNum}}</a>                            
+    {%elif articlesList.has_prev%}
+        <a class="btn btn-outline-info mb-4 cust-btn-info" href="{{url_for('DisplayArticles',pageNum=pageNum)}}">{{pageNum}}</a>                                                                
+    {%endif%}
+{%endfor%}
+{%set totalPage=articlesList.pages%}
+<a class="btn btn-outline-info mb-4 cust-btn-info" href="{{url_for('DisplayArticles',pageNum=totalPage)}}">&raquo;</a>
+</p>    
+    <!-- Second Column In Articles Starts Here
+    <div class="col-sm-4">        
+      <div class="card extCard">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title extCardTitle">Special title treatment test</h5>
+              <p class="card-text extCardText">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>              
+          <div class="class col-md-3">
+            <img src="./images/SennIconLogo.png" class="img-fluid rounded extImgRight" alt="...">
+          </div>              
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div> 
+</div>-->     
+  <!-- Articles First Row Section Ends Here -->
+  <!-- ============================================================================================================================ -->
+{%endblock%}

@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block mainTitle%}Σωματείο Εργαζομένων Νοσοκομείου Νάουσας Προφίλ{%endblock%}
+{%block pageTitle%}Σωματείο Εργαζομένων Νοσοκομείου Νάουσας To Προφίλ Του Σωματίου{%endblock%}
+{%block content%}
+<div class="row extRow">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="card appcont-box">
+            <div class="card-title text-center" style="font-size: 2rem;color: #1f1f1f;">{{pageData['profileData'].title}}</div>
+            <div class="card-body">{{pageData['profileData'].profile_txt}}</div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div> 
+{%endblock%}

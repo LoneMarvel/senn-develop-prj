@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageData['mainTitle']}}</title>
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/all.css')}}">    
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/carousel.css')}}">  
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/senn.css')}}">
+   
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Carousel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">            
+                <div class="carousel-item active">
+                    <div class="overlay-image" style="background-image: url({{url_for('static',filename='./images/image1.jpg')}});"></div>                
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image" style="background-image: url({{url_for('static',filename='./images/image2.jpg')}});"></div>                
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image" style="background-image: url({{url_for('static',filename='./images/image3.jpg')}});"></div>                
+                </div>
+                <div class="carousel-item">
+                  <div class="overlay-image" style="background-image: url({{url_for('static',filename='./images/imageagnik.jpg')}});"></div>                
+              </div>
+                <div class="container">
+                    <h1>Example HeadLine</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn btn-lg btn-primary">Go Here</a>
+                </div>
+            </div>
+            <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                <span class="sr-only">Previous</span><span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
+            <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+                <span class="sr-only">Next</span><span class="carousel-control-next-icon" aria-hidden="true"></span></a>
+        </div>
+    </header>    
+    <h2><center>Page Title</center></h2>
+    <!-- Main Container Div Section Starts Here -->  
+    <div class="container-fluid">
+    <!-- Articles First Row Section Starts Here -->
+      <div class="row extRow">
+        <div class="col-sm-2"></div>
+        <!-- First Column In Articles Starts Here -->
+        <div class="col-sm-4">        
+          <div class="card extCard">
+            <div class="row">
+              <div class="class col-md-3">
+                <img src="{{url_for('static',filename='./images/AlexLondon-thumb.jpg')}}" class="img-fluid rounded extImgLeft" alt="...">
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title extCardTitle">Special title treatment test</h5>
+                  <p class="card-text extCardText">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+        <!-- Second Column In Articles Starts Here -->
+        <div class="col-sm-4">        
+          <div class="card extCard">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title extCardTitle">Special title treatment test</h5>
+                  <p class="card-text extCardText">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>              
+              <div class="class col-md-3">
+                <img src="{{url_for('static',filename='./images/WhiteLion-thumb.jpg')}}" class="img-fluid rounded extImgRight" alt="...">
+              </div>              
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>      
+      <!-- Articles First Row Section Ends Here -->
+      <!-- ============================================================================================================================ -->
+      <!-- Articles Second Row Section Starts Here -->
+      <div class="row extRow">
+        <div class="col-sm-2"></div>
+        <!-- First Column In Articles Starts Here -->
+        <div class="col-sm-4">        
+          <div class="card extCard">
+            <div class="row">
+              <div class="class col-md-3">
+                <img src="{{url_for('static',filename='./images/AlexLondon-thumb.jpg')}}" class="img-fluid rounded extImgLeft" alt="...">
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title extCardTitle">Special title treatment test</h5>
+                  <p class="card-text extCardText">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+        <!-- Second Column In Articles Starts Here -->
+        <div class="col-sm-4">        
+          <div class="card extCard">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title extCardTitle">Special title treatment test</h5>
+                  <p class="card-text extCardText">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>              
+              <div class="class col-md-3">
+                <img src="{{url_for('static',filename='./images/WhiteLion-thumb.jpg')}}" class="img-fluid rounded extImgRight" alt="...">
+              </div>              
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>      
+      <!-- ============================================================================================================================ -->
+      <!-- Articles Second Row Section Starts Here -->
+      <div class="row extRow">
+        <div class="col-sm-2"></div>
+        <!-- First Column In Articles Starts Here -->
+        <div class="col-sm-4">        
+          <div class="card extCard">
+            <div class="row">
+              <div class="class col-md-3">
+                <img src="{{url_for('static',filename='./images/AlexLondon-thumb.jpg')}}" class="img-fluid rounded extImgLeft" alt="...">
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title extCardTitle">Special title treatment test</h5>
+                  <p class="card-text extCardText">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+        <!-- Second Column In Articles Starts Here -->
+        <div class="col-sm-4">        
+          <div class="card extCard">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title extCardTitle">Special title treatment test</h5>
+                  <p class="card-text extCardText">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>              
+              <div class="class col-md-3">
+                <img src="{{url_for('static',filename='./images/WhiteLion-thumb.jpg')}}" class="img-fluid rounded extImgRight" alt="...">
+              </div>              
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2"></div>
+      </div> 
+    <!-- Main Container Div Section Ends Here -->  
+    {{pageData['profileData'].profile_txt}}
+    </div>
+
+    <footer>
+      <span>&copy;&nbsp;<script>document.write(new Date().getFullYear())</script> Created For Test Purpose</span>
+    </footer>           
+    <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>    
+    <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>  
+    <script type="text/javascript" src="{{url_for('static',filename= 'js/jquery.min.js')}}"></script>      
+</body>
+</html>

@@ -1,0 +1,32 @@
+{%extends 'admindex.html'%}
+{%block mainTitle%}Σωματείο Εργαζομένων Νοσοκομείου Νάουσας {%endblock%}
+{%block pageTitle%}Διαχείρηση Αρθρων{%endblock%}
+{%block content%}
+<div id="ArticleFrm">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="card">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {{articleFrm.hidden_tag()}}
+                    {{articleFrm.title.label(class_='form-label')}}
+                    {{articleFrm.title(class_='form-control',value=recArticle.title)}}
+                    {{articleFrm.cat_name.label(class_='form-label')}}
+                    {{articleFrm.cat_name(class_='form-control',value=recArticle.artcat.category_name)}}
+                    {{articleFrm.articleCont.label(class_='form-label')}} 
+                    {{articleFrm.articleCont}}
+                    <br />
+                    {{articleFrm.articleImg(class='form-control')}}                                           
+                    <br /><br />
+                    {{articleFrm.saveArticle(class_='btn btn-secondary',value='Update Article')}}
+                </form>
+                {{ckeditor.load()}}                        
+                {{ckeditor.config(name='articleCont')}} 
+            </div>   
+        </div>
+        <div class="col-2">
+            <img src="{{url_for('static',filename=imageScr)}}" alt="">            
+        </div>
+    </div>
+</div>
+{%endblock%}

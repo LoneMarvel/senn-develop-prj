@@ -1,0 +1,22 @@
+{%extends 'admindex.html'%}
+{%block mainTitle%}Σωματείο Εργαζομένων Νοσοκομείου Νάουσας {%endblock%}
+{%block pageTitle%}Διαχείρηση Επεξεργασία Κατηγοριών Αρθρων{%endblock%}
+{%block content%}
+<div id="CatFrm">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card">                
+                <form action="" method="POST">
+                    {{catFrm.hidden_tag()}}
+                    {{catFrm.categoryName.label(class='form-label')}}
+                    {{catFrm.categoryName(class_='form-control',value=catRec.category_name)}}                    
+                    <br />                    
+                    {{catFrm.saveCat(class_='btn btn-secondary',value='Update Category')}}
+                </form>                
+            </div>   
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}

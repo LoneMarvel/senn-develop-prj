@@ -1,0 +1,86 @@
+{%extends 'admindex.html'%}
+{%block mainTitle%}Σωματείο Εργαζομένων Νοσοκομείου Νάουσας {%endblock%}
+{%block pageTitle%}Διαχείρηση Αρθρων{%endblock%}
+{%block content%}
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        {%if noArticleMsg%}
+            <div class="alert alert-info">{{noArticleMsg}}</div>                    
+        {%else%}            
+            <table class="table table-sm table-hover table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Τίτλος Αρθρου</th>
+                        <th scope="col">Περίληψη</th>
+                        <th scope="col">Κατηγορία</th>                      
+                        <th scope="col">Ημερ/νία</th>
+                        <th scope="col">Ενέργεια</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in articlesLst.items%}
+                        <tr>
+                            <th scope="row">{{ item.id }}</th>                            
+                            <td>{{item.title}}</td>
+                            <td>{{item.article_cont|safe|truncate(100)}}</td>
+                            <td>{{item.artcat.category_name}}</td>
+                            <td>{{item.article_date.strftime('%d/%m/%Y - %H:%M')}}</td>                                                        
+                            <td><a class="btn box-shadow--4dp btn-sm btn-outline btn-dark btn-href" role="button" href="{{url_for('ArticleEdit',articleId=item.id)}}">Επεξεργασία</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+            </table>
+        {%endif%}          
+            <a class="btn btn-outline-info mb-4 cust-btn-info" href="{{url_for('ArticleAdm',pageNum=1)}}">&laquo;</a>              
+            {%for pageNum in articlesLst.iter_pages()%}                                            
+                {%if articlesLst.has_next%}
+                    <a class="btn btn-outline-info mb-4 cust-btn-info" href="{{url_for('ArticleAdm',pageNum=pageNum)}}">{{pageNum}}</a>                            
+                {%elif articlesLst.has_prev%}
+                    <a class="btn btn-outline-info mb-4 cust-btn-info" href="{{url_for('ArticleAdm',pageNum=pageNum)}}">{{pageNum}}</a>                                                                
+                {%endif%}
+            {%endfor%}
+            {%set totalPage=articlesLst.pages%}
+            <a class="btn btn-outline-info mb-4 cust-btn-info" href="{{url_for('ArticleAdm',pageNum=totalPage)}}">&raquo;</a>            
+    </div>
+    <div class="col-2"><button class="btn btn-dark" id="ShowArticleFrmBtn" onclick="ShowArticleFrm()">Εμφάνιση Φόρμας</button></div>
+</div>
+<div id="ArticleFrm" style="display: none;">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="card">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {{articleFrm.hidden_tag()}}
+                    {{articleFrm.title.label(class='form-label')}}
+                    {{articleFrm.title(class='form-control')}}
+                    {{articleFrm.cat_name.label(class='form-label')}}
+                    {{articleFrm.cat_name(class='form-control')}}
+                    {{articleFrm.articleCont.label(class='form-label')}} 
+                    {{articleFrm.articleCont}} 
+                    <br />
+                    {{articleFrm.articleImg(class='form-control')}}                                           
+                    <br /><br />
+                    {{articleFrm.saveArticle(class='btn btn-secondary')}}
+                </form>
+                {{ckeditor.load()}}                        
+                {{ckeditor.config(name='articleCont')}} 
+            </div>   
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+<script>
+    function ShowArticleFrm(){
+        if ( document.getElementById('ArticleFrm').style.display === 'none' ){
+            document.getElementById('ArticleFrm').style.display = 'block';
+            document.getElementById('ShowArticleFrmBtn').innerText = 'Απόκρυψη Φόρμας'
+        }
+        else {
+            document.getElementById('ArticleFrm').style.display = 'none';
+            document.getElementById('ShowArticleFrmBtn').innerText = 'Εμφάνιση Φόρμας'
+        }
+    }
+</script>
+{%endblock%}

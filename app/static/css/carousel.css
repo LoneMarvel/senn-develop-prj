@@ -1,0 +1,22 @@
+.carousel-item{
+    height: 28rem;
+    background: rgb(27, 27, 27);                
+}
+.container{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding-bottom: 30px;
+    color: aliceblue;
+}        
+.overlay-image{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;            
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}

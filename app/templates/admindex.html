@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block mainTitle%}{%endblock%}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='webimages/favicon.ico') }}" type="image/icon" />
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/all.css')}}">    
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/carousel.css')}}">  
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/sennadm.css')}}">        
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="{{url_for('static', filename='images/SennIconLogo-sm.png')}}" alt="">                    
+            <label for="Nav" class="logo">Σωματείο Εργαζομένων Νοσοκομείου Νάουσας Διαχείρηση Site</label>
+            <ul>
+                <li><a href="#">Διαχείρηση Προφίλ</a></li>
+                <li><a href="{{url_for('ArticleAdm')}}">Διαχείρηση Αρθρων</a></li>
+                <li><a href="{{url_for('CatAdm')}}">Διαχείρηση Κατηγοριών</a></li>
+                <li><a href="#">Home</a></li>                
+                <li><a href="#">Home</a></li>                
+            </ul>
+        </nav>
+    </header>
+        <div><h3>{%block pageTitle%}{%endblock%}</h3></div>    
+        <div class="row" style="padding-top: 20px;padding-bottom: 30px;">
+            {%block content%}{%endblock%}
+        </div>        
+    <footer>
+        <span>&copy;&nbsp;<script>document.write(new Date().getFullYear())</script> Created For Test Purpose</span>
+    </footer>               
+    <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>    
+    <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>  
+    <script type="text/javascript" src="{{url_for('static',filename= 'js/jquery.min.js')}}"></script>   
+</body>    

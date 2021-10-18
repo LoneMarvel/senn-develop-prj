@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block mainTitle%}{%endblock%}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='webimages/favicon.ico') }}" type="image/icon" />
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/all.css')}}">    
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/carousel.css')}}">  
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/senn.css')}}">    
+   
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+          <div class="container-fluid">            
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">                
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{url_for('Index')}}">Κεντρική</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('DisplayArticles')}}">Αρθρα</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">            
+                <div class="carousel-item active">
+                    <div class="overlay-image" style="background-image: url({{url_for('static',filename='./webimages/image1.jpg')}});"></div>                
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image" style="background-image: url({{url_for('static',filename='./webimages/image2.jpg')}});"></div>                
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image" style="background-image: url({{url_for('static',filename='./webimages/image3.jpg')}});"></div>                
+                </div>
+                <div class="carousel-item">
+                  <div class="overlay-image" style="background-image: url({{url_for('static',filename='./webimages/imageagnik.jpg')}});"></div>                
+              </div>
+                <div class="container">
+                  <h2><center>{%block pageTitle%}{%endblock%}</center></h2>
+                </div>
+            </div>
+            <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                <span class="sr-only">Previous</span><span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
+            <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+                <span class="sr-only">Next</span><span class="carousel-control-next-icon" aria-hidden="true"></span></a>
+        </div>
+    </header>        
+    <!-- Main Container Div Section Starts Here -->  
+    <div class="container-fluid">
+    <!-- Display Profile Section Starts Here -->
+    {% block content %}{%endblock%}
+      <!-- Main Container Div Section Ends Here -->      
+    </div>
+    <footer>
+      <span>&copy;&nbsp;<script>document.write(new Date().getFullYear())</script> Created For Test Purpose</span>
+    </footer>               
+    <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>    
+    <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>  
+    <script type="text/javascript" src="{{url_for('static',filename= 'js/jquery.min.js')}}"></script>     
+</body>
+</html>

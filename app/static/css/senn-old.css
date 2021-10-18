@@ -1,0 +1,62 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+/*@font-face {
+    font-family: 'Roboto';
+    /*src: url('roboto.eot'); /* IE9 Compat Modes */
+    /*src: url('roboto.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    /*url('roboto.woff') format('woff'), /* Modern Browsers */
+    url('./fonts/Roboto-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+    /*url('roboto.svg#svgFontName') format('svg'); /* Legacy iOS */
+/*}*/
+html{
+    height: 100%;
+}
+body{            
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: #ccc;
+    min-height: 100%;            
+    position: relative;
+    padding-bottom: 80px;
+}
+h2 {
+    margin-top:20px;
+    text-align: center;
+    color: #696969;
+    font-weight: bold;
+}
+.extRow {
+    margin-top: 30px;
+}
+.extCard {    
+    width: 100%; 
+    height: 100%;
+    margin-right: 0px;    
+    background-color: #fafafa;
+    color:black;
+    box-shadow: 2px 5px 4px 3px #a5a5a5;
+}
+.extImgLeft {
+    margin: 5px 0px 5px 5px;
+}
+.extImgRight {
+    margin: 5px 0px 0px -5px;
+}
+.extCardTitle {
+    margin-top: 5px;
+    font-size: 140%;
+    font-weight: bold;
+    color: #696969;    
+}
+.extCardText {
+    margin-top: 10px;
+}
+footer{
+    background-color: #a5a5a5;
+    position: absolute;
+    bottom: 0;  
+    width:100%;
+    height:40px;
+    padding: 10px;
+    text-align: center;
+    color: aliceblue;
+}

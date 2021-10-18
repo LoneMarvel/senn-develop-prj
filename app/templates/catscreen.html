@@ -1,0 +1,59 @@
+{%extends 'admindex.html'%}
+{%block mainTitle%}Σωματείο Εργαζομένων Νοσοκομείου Νάουσας {%endblock%}
+{%block pageTitle%}Διαχείρηση Κατηγοριών Αρθρων{%endblock%}
+{%block content%}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">        
+        <table class="table table-sm table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ονομασία Κατηγορίας</th>                    
+                </tr>
+                </thead>
+                <tbody>
+                    {%set count = namespace(value=1)%}
+                    {% for item in catLst%}
+                    <tr>
+                        <th scope="row">{{ count.value }}</th>                            
+                        {% set count.value = count.value + 1%}
+                        <td>{{ item.category_name }}</td>                        
+                        <td><a class="btn box-shadow--4dp btn-sm btn-outline btn-dark btn-href" role="button" href="{{url_for('CatEdit',catId=item.id)}}">Επεξεργασία</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>        
+    </div>
+    <div class="col-4"><button class="btn btn-dark" id="ShowCatFrmBtn" onclick="ShowCatFrm()">Εμφάνιση Φόρμας</button></div>
+</div>
+<div id="CatFrm" style="display: none;">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card">
+                <form action="" method="POST">
+                    {{catFrm.hidden_tag()}}
+                    {{catFrm.categoryName.label(class='form-label')}}
+                    {{catFrm.categoryName(class='form-control')}}                    
+                    <br />                    
+                    {{catFrm.saveCat(class='btn btn-secondary')}}
+                </form>                
+            </div>   
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+<script>
+    function ShowCatFrm(){
+        if ( document.getElementById('CatFrm').style.display === 'none' ){
+            document.getElementById('CatFrm').style.display = 'block';
+            document.getElementById('ShowCatFrmBtn').innerText = 'Απόκρυψη Φόρμας'
+        }
+        else {
+            document.getElementById('CatFrm').style.display = 'none';
+            document.getElementById('ShowCatFrmBtn').innerText = 'Εμφάνιση Φόρμας'
+        }
+    }
+</script>
+{%endblock%}
